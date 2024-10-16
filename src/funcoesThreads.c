@@ -55,10 +55,10 @@ void *thread_comparadora(void * compartilhamento) {
          arq1 = (char*) malloc(0);
          while(1) {
                  pthread_mutex_lock(&mutex1);
-                 arq2 = (char*)realloc(arq2, (strlen(((dadosThread*)compartilhamento)->arquivo2)+1)*si  zeof(char));
+                 arq2 = (char*)realloc(arq2, (strlen(((dadosThread*)compartilhamento)->arquivo2)+1) * sizeof(char));
                  strcpy(arq2, ((dadosThread*)compartilhamento)->arquivo2);
  
-                 arq1 = (char*) realloc(arq1, (strlen(((dadosThread *)compartilhamento)->arquivo1)+1)*  sizeof(char));
+                 arq1 = (char*) realloc(arq1, (strlen(((dadosThread *)compartilhamento)->arquivo1)+1) * sizeof(char));
                  strcpy(arq1, ((dadosThread*)compartilhamento)->arquivo1);
  
                  // Assinala que a thread principal pode modificar os índices.
